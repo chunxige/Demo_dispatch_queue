@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mr5-uI-dm4">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--主队列和主线程-->
+        <scene sceneID="ikR-u8-C7y">
+            <objects>
+                <viewController id="bBV-Xg-L9Y" customClass="MainThreadQueueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6it-H8-mur"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dtg-Xo-x4E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YPg-K6-UaM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3c-pb-GVw">
+                                <rect key="frame" x="15" y="164" width="177" height="30"/>
+                                <state key="normal" title="主线程 并行队列 同步 执行"/>
+                                <connections>
+                                    <action selector="mainThreadConcurrentSycAction:" destination="bBV-Xg-L9Y" eventType="touchUpInside" id="fCn-bZ-tFY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihc-2q-d9P">
+                                <rect key="frame" x="15" y="224" width="177" height="30"/>
+                                <state key="normal" title="主线程 并行队列 异步 执行"/>
+                                <connections>
+                                    <action selector="mainThreadConcurrentAsycAction:" destination="bBV-Xg-L9Y" eventType="touchUpInside" id="849-De-7JV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0Z-Yp-kjY">
+                                <rect key="frame" x="15" y="284" width="177" height="30"/>
+                                <state key="normal" title="主线程 串行队列 同步 执行"/>
+                                <connections>
+                                    <action selector="mainThreadSerialSycAction:" destination="bBV-Xg-L9Y" eventType="touchUpInside" id="hKI-1G-bqf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfW-1F-PLG">
+                                <rect key="frame" x="15" y="344" width="177" height="30"/>
+                                <state key="normal" title="主线程 串行队列 异步 执行"/>
+                                <connections>
+                                    <action selector="mainThreadSerialAsycAction:" destination="bBV-Xg-L9Y" eventType="touchUpInside" id="OYi-4r-DRl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pS-jZ-TaG">
+                                <rect key="frame" x="15" y="404" width="162" height="30"/>
+                                <state key="normal" title="主线程 主队列 同步 执行"/>
+                                <connections>
+                                    <action selector="mainThreadMainQueueSycAction:" destination="bBV-Xg-L9Y" eventType="touchUpInside" id="Cld-xT-82q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fop-w8-Khb">
+                                <rect key="frame" x="15" y="464" width="162" height="30"/>
+                                <state key="normal" title="主线程 主队列 异步 执行"/>
+                                <connections>
+                                    <action selector="mainThreadMainQueueAsycAction:" destination="bBV-Xg-L9Y" eventType="touchUpInside" id="xAn-qm-Rzi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCg-DS-wYf">
+                                <rect key="frame" x="442" y="164" width="128" height="100"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="S6b-qF-9hY"/>
+                                    <constraint firstAttribute="width" constant="128" id="kIZ-6s-8Rm"/>
+                                </constraints>
+                                <state key="normal" title="tap me"/>
+                                <connections>
+                                    <action selector="tapAction:" destination="bBV-Xg-L9Y" eventType="touchUpInside" id="Uh0-yZ-5Ox"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0pS-jZ-TaG" firstAttribute="top" secondItem="sfW-1F-PLG" secondAttribute="bottom" constant="30" id="9ub-Ye-RyP"/>
+                            <constraint firstItem="ihc-2q-d9P" firstAttribute="leading" secondItem="YPg-K6-UaM" secondAttribute="leading" constant="15" id="DGA-xD-agi"/>
+                            <constraint firstAttribute="trailing" secondItem="tCg-DS-wYf" secondAttribute="trailing" constant="30" id="DIL-Nm-c6G"/>
+                            <constraint firstItem="0pS-jZ-TaG" firstAttribute="leading" secondItem="YPg-K6-UaM" secondAttribute="leading" constant="15" id="EAI-E0-veW"/>
+                            <constraint firstItem="tCg-DS-wYf" firstAttribute="top" secondItem="6it-H8-mur" secondAttribute="bottom" constant="100" id="JfQ-BY-8s9"/>
+                            <constraint firstItem="ihc-2q-d9P" firstAttribute="top" secondItem="l3c-pb-GVw" secondAttribute="bottom" constant="30" id="MQc-C8-W7c"/>
+                            <constraint firstItem="l3c-pb-GVw" firstAttribute="top" secondItem="6it-H8-mur" secondAttribute="bottom" constant="100" id="MvJ-cD-HQN"/>
+                            <constraint firstItem="e0Z-Yp-kjY" firstAttribute="leading" secondItem="YPg-K6-UaM" secondAttribute="leading" constant="15" id="NZU-6d-CDh"/>
+                            <constraint firstItem="sfW-1F-PLG" firstAttribute="top" secondItem="e0Z-Yp-kjY" secondAttribute="bottom" constant="30" id="Rqk-u3-Cra"/>
+                            <constraint firstItem="l3c-pb-GVw" firstAttribute="leading" secondItem="YPg-K6-UaM" secondAttribute="leading" constant="15" id="eCN-RF-cjJ"/>
+                            <constraint firstItem="sfW-1F-PLG" firstAttribute="leading" secondItem="YPg-K6-UaM" secondAttribute="leading" constant="15" id="hMa-ui-W2S"/>
+                            <constraint firstItem="fop-w8-Khb" firstAttribute="top" secondItem="0pS-jZ-TaG" secondAttribute="bottom" constant="30" id="kOX-M0-tk3"/>
+                            <constraint firstItem="fop-w8-Khb" firstAttribute="leading" secondItem="YPg-K6-UaM" secondAttribute="leading" constant="15" id="mt2-9v-2rp"/>
+                            <constraint firstItem="e0Z-Yp-kjY" firstAttribute="top" secondItem="ihc-2q-d9P" secondAttribute="bottom" constant="30" id="tVN-f4-ZT6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="主队列和主线程" id="8jo-jE-JUj"/>
+                    <connections>
+                        <outlet property="tapButton" destination="tCg-DS-wYf" id="FNe-N7-Wd6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bdS-U5-g0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173" y="197"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="X8N-J3-3Kt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mr5-uI-dm4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VPg-Jf-iYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bBV-Xg-L9Y" kind="relationship" relationship="rootViewController" id="uye-JF-5rz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDo-y3-6ex" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="197"/>
+        </scene>
+    </scenes>
+</document>
